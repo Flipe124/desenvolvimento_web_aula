@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.6.2/css/bulma.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Consulta CEP</title>
+</head>
+<body class="wrapper">
+    <div class="main">
+        <section class="hero is-link">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Consulta CEP</h1>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <form id="search">
+                    <div class="field">
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-hovered is-large" id="zipcode" type="text" placeholder="Digite o CEP" maxlength="9" autocomplete="off" tabindex="1" autofocus required>
+                        </div>
+                        <p class="help has-text-grey">Exemplo: 01001-001</p>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-map-pin"></i>
+                        </span>
+                    </div>
+                    <div class="tile is-12">
+                        <div class="buttons has-addons is-left tile is-6">
+                            <button class="button is-danger" type="reset">LIMPAR</button>
+                        </div>
+                        <div class="buttons has-addons is-right tile is-6">
+                            <button class="button is-success" type="submit">PESQUISAR</button>
+                        </div>
+                    </div>
+                        
+                </form>
+            </div>
+            <div class="container" id="output"></div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/vanilla-masker@1.2.0/build/vanilla-masker.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
