@@ -25,16 +25,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('contact', {
       url: '/contact',
       templateUrl: './pages/contact.html',
-      // controller: 'ContactController'
+    //   controller: 'ContactController'
     })
 
     .state('contact-edit', {
         url: '/contact-edit/:cd',
-        templateUrl: './pages/home.html',
+        templateUrl: './pages/contact.html',
         controller: 'ContactController'
       })
 })
 
 app.controller('AboutController', function($scope){
     $scope.message = "Teste maroto"
+})
+
+app.controller('ContactController', function($scope, $http, $stateParams){
+    $http.get(`https://viacep.com.br/ws/${$stateParams.cd}/json`)
+    .then(function(res){
+        $scope.data = res.data;
+    })
 })
